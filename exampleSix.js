@@ -1,5 +1,7 @@
+//Decilaration of Application
 var application = angular.module('Store',[]);
 
+//Creation of data to put into the controller
 this.gems = [
 		{
 		name: "Ruby",
@@ -59,20 +61,27 @@ this.gems = [
 	}
 
 
-	];
+];
 
+//StoreBackEndController ties the created gems to the controllers products
 application.controller("StoreBackEndController",function(){
-
 	this.products = gems;
-
 });
 
+//ReviewController allows for the management of the StoreBackEndController.products.reviews
 application.controller('ReviewController',function(){
+
+	//Create a the internal review object
 	this.review = {};
 
+	//Add the review function to the StoreBackEndController.products.reviews collection
+
+	//TIE TO THE OTHER CONTROLLER
 	this.addReview = function(storeItems){
 		storeItems.reviews.push(this.review);
 		alert("Reviews");
 		this.review = {};
 	};
+	//TIE TO THE OTHER CONTROLLER
+	
 });
