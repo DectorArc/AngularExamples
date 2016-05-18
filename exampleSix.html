@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="Store">
+	<head>
+		<title>Forms and Fields</title>
+		<script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css"></link>
+		<script type="text/javascript" src="../bootstrap-3.3.2-dist/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="./angular.min.js"></script>
+		<script type="text/javascript" src="exampleSix.js"></script>
+	</head>
+
+
+	<body>
+
+		<!--Simple Repeat of of the ng-repeat function with the addition later of a nested repeat-->
+		<div ng-controller="StoreBackEndController as StoreFrontEndController" >
+			<div ng-repeat="storeItems in StoreFrontEndController.products">
+				
+				<h1>Hello {{storeItems.reviews[0]}}</h1>
+			</div>
+		</div>
+
+		<h1>BREAK FOR EXAMPLE</h1>
+
+		<!--Nested Repeat Example where we go from storeItems to its reviews now as productReviews-->
+		<div ng-controller="StoreBackEndController as StoreFrontEndController" >
+			<div ng-repeat="storeItems in StoreFrontEndController.products">
+				<div ng-repeat="productReviews in storeItems.reviews">
+					<h1>Hello {{productReviews.author}}</h1>
+				</div>
+				
+			</div>
+		</div>
+
+		<h1>BREAK FOR FORM</h1>
+
+		<div ng-controller="StoreBackEndController as StoreFrontEndController" >
+			<div ng-repeat="storeItems in StoreFrontEndController.products">
+				
+					<blockquote ng-repeat="productReviews in storeItems.reviews">
+						<h1>Hello {{productReviews.author}}</h1>
+						<h2>{{productReviews.body}}</h2>
+					</blockquote>
+
+					
+
+			</div>
+
+			<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(products)">
+
+						<blockquote>
+						<h1>Hello {{reviewCtrl.review}}</h1>
+						
+						</blockquote>
+
+					  Author name:<br>
+		  				<input type="text" ng-model="reviewCtrl.review.author" value="Mickey"><br>
+		  			  Review:<br>
+		  				<input type="text" ng-model="reviewCtrl.review.body" value="Mouse"><br><br>
+		  			  Stars:<br>
+		  				<input type="text" ng-model="reviewCtrl.review.stars" value="Mouse"><br><br>
+		  				
+		  				<input type="submit">
+		  			  
+			</form>
+			
+		</div>
+
+		
+	</body>
+
+</html>

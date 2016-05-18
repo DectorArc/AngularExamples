@@ -33,4 +33,8 @@ var gems = [
 
 application.controller("StoreController",function(){
 	this.products = gems;
+
+	this.addReview = function(){
+
+	};
 });
