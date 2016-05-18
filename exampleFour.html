@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html ng-app="Store">
+
+	<head>
+		<title>More With Directives</title>
+		<script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css"></link>
+		<script type="text/javascript" src="../bootstrap-3.3.2-dist/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="./angular.min.js"></script>
+		<script type="text/javascript" src="./exampleFour.js"></script>
+	</head>
+
+	<body>
+
+		<!--More on Filters and Directives -->
+		<!-- {{data|filter:option}}
+			In this example we are taking everything from the products and ordering it by price
+			we then can also take the name and make it upper case as well and put a dollar sign infront of the price variable.
+		 -->
+		
+		<div class="fluid-container" ng-controller="StoreController as StoreProperties">
+			<div ng-repeat="Product in StoreProperties.products | orderBy:'-price'">
+				<h1 class="alert alert-success">{{Product.name | uppercase}}</h1>
+				<h3 class="alert alert-info">{{Product.price | currency}}</h3>
+				<img class="thumbnail" height="100" width="150" ng-src="{{Product.imgSource}}"></img>
+			</div>
+		</div>
+
+
+	</body>
+</html>

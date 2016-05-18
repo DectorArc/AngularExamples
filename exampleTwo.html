@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html ng-app="Store">
+	<head>
+		<title>Example Two</title>
+		<script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css"></link>
+		<script type="text/javascript" src="../bootstrap-3.3.2-dist/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="./angular.min.js"></script>
+		
+	</head>
+
+	<body>
+
+		<!--Here we tie the Store controller to an html element -->
+		<!--[Directive,Controllername, as , Alias] -->
+
+		<h1>Basic Controller Example</h1>
+		<div ng-controller="StoreController as shop">
+			<h4>Name: {{shop.product.name}}</h4>
+			<h4>Price: ${{shop.product.price}}</h4>
+			<h4>Description: {{shop.product.description}}</h4>
+		</div>
+
+	</body>
+
+	<script type="text/javascript" src="./exampleTwo.js"></script>
+</html>

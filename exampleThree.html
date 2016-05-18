@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<!--Setting up the store as the basic application -->
+<html ng-app="Store">
+	<head>
+		<title>Example Three</title>
+		<script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css"></link>
+		<script type="text/javascript" src="../bootstrap-3.3.2-dist/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="./angular.min.js"></script>
+		<script type="text/javascript" src="./exampleThree.js"></script>
+	</head>
+
+	<body>
+		
+		<!--Sample for using the ng-show directive-->
+		<!--Look in the items controller and assing the alias of items to it
+			then look in the products array assinged to it and retrive the can 
+			purchase value. If true then show the button-->
+		<div ng-controller="ItemsController as Items">
+			<h1>{{Items.products[0].name}}</h1>
+			<button ng-show="Items.products[0].canPurchase">Add To Cart</button>
+		</div>
+
+		<!--Sample for using the ng-hide directive-->
+		<!--Look in the items controller and assing the alias of items to it
+			then look in the products array assinged to it and retrive the can 
+			purchase value. If true then hide the button-->
+		<div ng-controller="ItemsController as Items">
+			<h1>{{Items.products[1].name}}</h1>
+			<button ng-hide="Items.products[1].canPurchase">Add To Cart</button>
+		</div>
+
+		<br></br>
+		<br></br>
+		<br></br>
+
+		<!--Sample for using the ng-repeat directive -->
+		<!--After taking the Items assign the alias of purchase items to allow
+			for the iteration of each item in the collection -->
+		<div ng-controller="ItemsController as Items">
+			<div ng-repeat="purchaseItems in Items.products">
+				<h1>{{purchaseItems.name}}</h1>
+				<h3>{{purchaseItems.price}}</h3>
+				<h3>{{purchaseItems.description}}</h3>
+				<button ng-show="purchaseItems.canPurchase">Add to Cart</button>
+			</div>
+		</div>
+
+
+	</body>
+
+</html>

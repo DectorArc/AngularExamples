@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html ng-app="Store">
+	<head>
+		<title>Tab Examples</title>
+		<script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css"></link>
+		<script type="text/javascript" src="../bootstrap-3.3.2-dist/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="./angular.min.js"></script>
+		<script type="text/javascript" src="exampleFive.js"></script>
+	</head>
+
+	<body>
+		<div class="fluid-container jumbotron">
+
+			<!--Using the Click directive -->
+			<!--While using the click directive you can specify function and vairables to change when a particular dom element is clicked -->
+
+			<!-- ng-init = initializes tabs to specific value EX:<section ng-init="tab = 1"-->
+			<h1>Grinding Tabs</h1>
+				<div>
+					<section ng-controller="PannelController as Pannel">
+
+						<!--Simple function example-->
+						<h3 ng-click="Pannel.shoutOut()"> Here we go!!</h3>
+
+						<!--Here we use the function selectTab to change the variable -->
+						<ul class="nav nav-pills">
+						<li><button  ng-click="Pannel.selectTab(1)">Test One</button></li>
+						<li><button  ng-click="Pannel.selectTab(2)">Test One</button></li>
+						<li><button  ng-click="Pannel.selectTab(3)">Test One</button></li>
+						</ul>
+						
+
+						<!-- Here when the tab value changes we are evaluating it to show the appropriate content of the tab using the function  -->
+						<div class="pannel" ng-show="Pannel.isSelected(1)">
+							<h4>Description</h4>
+						</div>
+						<div class="pannel" ng-show="Pannel.isSelected(2)">
+							<h4>Sepcification</h4>
+						</div>
+						<div class="pannel" ng-show="Pannel.isSelected(3)">
+							<h4>Reviews</h4>
+						</div>
+					</section>
+
+					
+				</div>
+		</div>
+
+
+		<!--
+			Expressions define a two-way data binding this means that expressions are re-evaluated when the property changes
+		 -->
+
+
+
+	</body>
+</html>
