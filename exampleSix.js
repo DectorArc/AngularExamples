@@ -70,10 +70,9 @@ application.controller("StoreBackEndController",function(){
 application.controller('ReviewController',function(){
 	this.review = {};
 
-	this.addReview = function(product){
-		//product.reviews.push(this.review);
-
-		console.log(this.review);
+	this.addReview = function(storeItems){
+		storeItems.reviews.push(this.review);
+		alert("Reviews");
 		this.review = {};
 	};
 });

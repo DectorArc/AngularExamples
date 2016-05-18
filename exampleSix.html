@@ -10,12 +10,11 @@
 	</head>
 
 
-	<body>
+	<body ng-controller="StoreBackEndController as StoreFrontEndController">
 
 		<!--Simple Repeat of of the ng-repeat function with the addition later of a nested repeat-->
-		<div ng-controller="StoreBackEndController as StoreFrontEndController" >
+		<div>
 			<div ng-repeat="storeItems in StoreFrontEndController.products">
-				
 				<h1>Hello {{storeItems.reviews[0]}}</h1>
 			</div>
 		</div>
@@ -33,38 +32,40 @@
 		</div>
 
 		<h1>BREAK FOR FORM</h1>
+			<!--In this example we will be covering a real-time two way binding-->
 
-		<div ng-controller="StoreBackEndController as StoreFrontEndController" >
+
+			<!--We first take all the storeItems or products from the front end store controller-->
 			<div ng-repeat="storeItems in StoreFrontEndController.products">
-				
+					
+					<!--We next take the productReviews or reviews from each individual item -->
 					<blockquote ng-repeat="productReviews in storeItems.reviews">
 						<h1>Hello {{productReviews.author}}</h1>
 						<h2>{{productReviews.body}}</h2>
 					</blockquote>
 
-					
+			<!--Now we create a ReviewController with the alias reviewCtrl. Also note the use of the ng-submit tag. This is used to send the form to the server. In this case we are calling a function called addReview from the controller -->
+			<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(storeItems)">
 
-			</div>
-
-			<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(products)">
-
+						<!-- -->
 						<blockquote>
 						<h1>Hello {{reviewCtrl.review}}</h1>
-						
 						</blockquote>
 
+					  <!--With the ng-model tag we can specify the data fields of the review object to send back to the server.In this case it will be the author,body, and stars -->
 					  Author name:<br>
-		  				<input type="text" ng-model="reviewCtrl.review.author" value="Mickey"><br>
+		  				<input type="text" ng-model="reviewCtrl.review.author" ><br>
 		  			  Review:<br>
-		  				<input type="text" ng-model="reviewCtrl.review.body" value="Mouse"><br><br>
+		  				<input type="text" ng-model="reviewCtrl.review.body" ><br><br>
 		  			  Stars:<br>
-		  				<input type="text" ng-model="reviewCtrl.review.stars" value="Mouse"><br><br>
-		  				
+		  				<input type="text" ng-model="reviewCtrl.review.stars" ><br><br>
 		  				<input type="submit">
 		  			  
 			</form>
 			
 		</div>
+
+
 
 		
 	</body>
