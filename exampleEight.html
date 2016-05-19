@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html ng-app="GemStore">
+
+	<head>
+		<title>Custom Directives</title>
+		<script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css"></link>
+		<script type="text/javascript" src="../bootstrap-3.3.2-dist/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="./angular.min.js"></script>
+		<script type="text/javascript" src="exampleEight.js"></script>
+	</head>
+
+	<body ng-controller="StoreController as Controller">
+		<h1>Moose</h1>
+
+		<!--Partial example with ng-include -->
+		<div ng-include="'exampleEight-A.html'"></div>
+		
+
+		<!--Partial example with custom tag -->
+		<h1>Place Holder Directive</h1>
+		<placeholder>
+		</placeholder>
+
+
+	</body>
+
+
+
+</html>
