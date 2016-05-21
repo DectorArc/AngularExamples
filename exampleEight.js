@@ -69,4 +69,12 @@ application.directive('placeholder',function(){
 		restrict: 'E',
 		templateUrl: 'exampleEight-A.html'
 	};
+});
+
+application.directive('holder',function(){
+	return{
+		//e stands for element
+		restrict: 'A',
+		templateUrl: 'exampleEight-A.html'
+	};
 })
