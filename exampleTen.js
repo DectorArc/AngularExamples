@@ -1,7 +1,7 @@
 var application = angular.module('ReportCard',[]);
 
 var grades = [
-    { "FirstNumber": 45, 
+	{ "FirstNumber": 45, 
     "SecondNumber": 91, 
     "CorrectAnswer": -46, 
     "YourAnswer": 12},
@@ -26,17 +26,5 @@ var grades = [
     "CorrectAnswer": 28, 
     "YourAnswer": 55} 
 
-];
 
-//Custom directive tag produced by moving the controller function into the directive
-//Here we give the alias of the controller as card to be used in exampleNine-A.html
-application.directive('printOut',function(){
-	return{
-		restrict:'E',
-		templateUrl:'exampleNine-A.html',
-		controller: function(){
-			this.report = grades;
-		},
-		controllerAs:'card'
-	}
-});
+];
