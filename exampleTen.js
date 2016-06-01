@@ -1,4 +1,4 @@
-var application = angular.module('ReportCard',[]);
+var application = angular.module('ReportCard',['marks']);
 
 var grades = [
 	{ "FirstNumber": 45, 
@@ -26,5 +26,9 @@ var grades = [
     "CorrectAnswer": 28, 
     "YourAnswer": 55} 
 
-
 ];
+
+application.controller('ReportCardController',function(){
+	this.reportCard = grades;
+});
+
