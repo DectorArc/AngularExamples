@@ -1,3 +1,4 @@
+//Report car application with the marks application dependency
 var application = angular.module('ReportCard',['marks']);
 
 var grades = [
@@ -28,6 +29,7 @@ var grades = [
 
 ];
 
+//Report card controller
 application.controller('ReportCardController',function(){
 	this.reportCard = grades;
 });
