@@ -25,19 +25,25 @@ var application = angular.module("ReportCard",[]);
 
 */
 
+var card = null;
+
 application.controller("ReportCardController",['$http',function($http){
-	var card = this;
+	card = this;
 
 	card.lineItems = [];
 
 	$http.get('/answers.json').success(function(data){
 		card.lineItems = data;
-		alert(card.lineItems[0].Time);
+		
 	});
 
-	$http.get('/answers.json').success(function(data){
-		card.lineItems = data;
-		alert(card.lineItems[0].Time);
-	})
+	
 
 }]);
+
+application.directive('reportstatus',function(){
+	return {
+		restrict:'E',
+		templateUrl:'exampleEleven-A.html'
+	};
+});

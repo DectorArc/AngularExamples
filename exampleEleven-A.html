@@ -1,0 +1,10 @@
+<div class="panel panel-info" ng-repeat="LineItems in Controller.lineItems">
+	<div class="panel-body">
+		<h1 class="alert-info"">Status</h1>
+		<h4 class="alert-info">Time: {{LineItems.Time}}</h4>
+		<h4 class="alert-warning" role="alert">First Number: {{LineItems.FirstNumber}}</h4>
+		<h4 class="alert-warning" role="alert">Second Number: {{LineItems.SecondNumber}}</h4>
+		<h4 class="alert-success" role="alert">Correct Answer: {{LineItems.CorrectAnswer}}</h4>
+		<h4 class="alert-danger" role="alert">Your Answer: {{LineItems.YourAnswer}}</h4>
+	</div>
+</div>
