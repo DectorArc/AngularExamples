@@ -30,9 +30,14 @@ application.controller("ReportCardController",['$http',function($http){
 
 	card.lineItems = [];
 
-	$http.get('/animals.json').success(function(data){
+	$http.get('/answers.json').success(function(data){
 		card.lineItems = data;
-		alert(card.lineItems[0].name);
+		alert(card.lineItems[0].Time);
+	});
+
+	$http.get('/answers.json').success(function(data){
+		card.lineItems = data;
+		alert(card.lineItems[0].Time);
 	})
 
 }]);
